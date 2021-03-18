@@ -2,9 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import utils.WaitClasses;
+import utils.WaitStrategies;
 
 public class LoginPage {
 
@@ -35,8 +33,8 @@ public class LoginPage {
 
     public boolean clickLoginUnsuccessful(){
         clickLoginBtn();
-        WaitClasses wait = new WaitClasses(driver);
-        wait.explicitWait(loginBtn);
+        WaitStrategies wait = new WaitStrategies(driver);
+        wait.waitElementToBeClickable(loginBtn);
         return driver.findElement(loginBtn).isDisplayed();
     }
 

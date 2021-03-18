@@ -5,15 +5,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class WaitClasses {
+public class WaitStrategies {
 
-    public WaitClasses(WebDriver driver) {
+    public WaitStrategies(WebDriver driver) {
         this.driver = driver;
     }
 
     private WebDriver driver;
 
-    public void explicitWait(By elementToWait){
+    public void waitElementToBeClickable(By elementToWait){
         WebDriverWait wait = new  WebDriverWait(driver, 3);
         wait.until(ExpectedConditions.elementToBeClickable(elementToWait));
     }

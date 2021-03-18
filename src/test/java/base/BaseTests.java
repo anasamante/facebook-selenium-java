@@ -11,7 +11,6 @@ public class BaseTests {
     private WebDriver driver;
     protected LoginPage loginPage;
 
-
     @BeforeClass
     public void setUp(){
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
@@ -26,11 +25,6 @@ public class BaseTests {
     }
 
     @AfterClass
-    public void close(){
-        driver.close();
-    }
-
-    @AfterTest
     public void tearDown(){
         driver.quit();
     }
